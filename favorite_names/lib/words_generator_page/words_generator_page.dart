@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:favorite_names/app/favorite_names_app.dart';
 import 'package:favorite_names/reusable_widgets/big_card_widget.dart';
+import 'package:favorite_names/words_generator_page/favorites_history_list_widget.dart';
 
 class WordsGeneratorPage extends StatelessWidget {
   @override
@@ -21,6 +22,11 @@ class WordsGeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Expanded(
+            flex: 3,
+            child: FavoriteHistoryListWidget(),
+          ),
+          SizedBox(height: 10),
           BigCardWidget(pair: pair),
           SizedBox(height: 10),
           Row(
@@ -42,6 +48,7 @@ class WordsGeneratorPage extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(flex: 2),
         ],
       ),
     );
